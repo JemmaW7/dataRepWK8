@@ -66,12 +66,13 @@ app.get('/api/movie/:id', async (req, res) => {
     res.send(movie);  
 });
 
+// Route to handle GET requests for fetching a specific movie by its ID
  app.get('/api/movie/:id', async (req, res) => {
    let movie = await Movie.findById({ _id: req.params.id });
    res.send(movie);
 });
 
-
+// Route to handle GET requests for fetching a specific movie by its ID
 app.put('/api/movie/:id', async (req, res) => {
     let movie = await Movie.findByIdAndUpdate(req.params.id, req.body, { new: true });
     res.send(movie);
